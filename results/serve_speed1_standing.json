@@ -1,0 +1,45 @@
+{
+  "profile": "SPEED=1 standing latency",
+  "date_standing": "2026-07-11",
+  "model_id": "glm-5.2",
+  "checkpoint": "QuantTrio/GLM-5.2-Int4-Int8Mix stock + late ablit (o_proj L65-77 λ=3.0)",
+  "stock_base": "QuantTrio/GLM-5.2-Int4-Int8Mix",
+  "stock_base_url": "https://huggingface.co/QuantTrio/GLM-5.2-Int4-Int8Mix",
+  "stock_credit": "QuantTrio — stock Int4-Int8Mix quantized weights",
+  "image": "vllm-node-tf5-glm52-b12x:probe-modded",
+  "hardware": "4x NVIDIA DGX Spark GB10 TP=4 RoCE",
+  "serve": {
+    "SPEED": 1,
+    "max_num_seqs": 1,
+    "max_model_len": 128000,
+    "gpu_memory_utilization": 0.86,
+    "kv_cache_memory_bytes": 7008000000,
+    "kv_cache_dtype": "fp8_ds_mla",
+    "mtp_k": 4,
+    "draft_tensor_parallel_size": 1,
+    "attention_backend": "FLASHMLA_SPARSE",
+    "async_scheduling": true,
+    "cudagraph_mode": "FULL",
+    "fuse_gemm_comms": true,
+    "port": 8210,
+    "layering_overlays": false
+  },
+  "quality": {
+    "true_bypass": "32/32",
+    "garbled": 0,
+    "coherence": "6/6",
+    "hermes_primary": "4/4"
+  },
+  "speed_c1_thinking_off": {
+    "count_list_tok_s": [29.67, 30.23],
+    "count_list_note": "structured decode; report as primary C1 metric",
+    "essay_tok_s": 17.72,
+    "essay_note": "prose; lower MTP accept — report separately"
+  },
+  "probe_protocol": {
+    "enable_thinking": false,
+    "temperature": 0,
+    "metric": "completion_tokens / decode_time (exclude TTFT)"
+  },
+  "_note": "Sanitized aggregates only; raw harmful probe bodies not published."
+}

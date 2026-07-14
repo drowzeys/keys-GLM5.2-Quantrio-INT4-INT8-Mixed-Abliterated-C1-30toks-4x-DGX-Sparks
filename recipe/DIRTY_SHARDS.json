@@ -1,0 +1,77 @@
+{
+  "repo": "drowzeys/GLM-5.2-Int4-Int8Mix-Abliterated",
+  "recipe": "o_proj L65-77 lambda=3.0 SRA prefill rank-1",
+  "n_dirty_shards": 13,
+  "n_model_shards_total": 124,
+  "note": "111 other model shards match QuantTrio stock by design. Only these 13 must differ from QuantTrio. Stock sizes are typically +32 bytes for these names.",
+  "launcher_hub_name": "glm52-int4-int8mix",
+  "launcher_serve_path": "/cache/huggingface/hub/glm52-int4-int8mix",
+  "host_hub_symlink": "/var/tmp/models/hub/glm52-int4-int8mix -> ../glm52-int4-int8mix-abliterated",
+  "dirty_shards": [
+    {
+      "name": "model-00100-of-00124.safetensors",
+      "size": 3216415680,
+      "sha256": "55554078f9b34ed433d9a859f7292daf101f8539f4a0876cf7d46951100d5b2c"
+    },
+    {
+      "name": "model-00101-of-00124.safetensors",
+      "size": 3215694016,
+      "sha256": "aa6708e62f281fb2174574ce91c937100b7d621f25aa2560dae933e65ef0fba7"
+    },
+    {
+      "name": "model-00103-of-00124.safetensors",
+      "size": 3216415344,
+      "sha256": "6581664b318bbcb17fe9dfdc50c80673bfd42790662651713e33f27209e1bc7b"
+    },
+    {
+      "name": "model-00104-of-00124.safetensors",
+      "size": 3216414936,
+      "sha256": "3091e2ecf2ccd5f9f48bc96293d5e8efac721bb06b3fe5db1bf86cc69669289f"
+    },
+    {
+      "name": "model-00106-of-00124.safetensors",
+      "size": 3216414288,
+      "sha256": "f2cd684f1178a3959bb1fa3988767c2370d5069ef4fc705bde13ab95ad9a4a0e"
+    },
+    {
+      "name": "model-00109-of-00124.safetensors",
+      "size": 3215694024,
+      "sha256": "7d655cd896639836e1fd95520242ea97110f01946a87270658a9cdd6856dae32"
+    },
+    {
+      "name": "model-00111-of-00124.safetensors",
+      "size": 3216415168,
+      "sha256": "00feb0a452e4196f3e939e5ab536047138631955d3d686e66caeb2015af8d5a0"
+    },
+    {
+      "name": "model-00113-of-00124.safetensors",
+      "size": 3218149800,
+      "sha256": "8a3de394310e9c3826e0d1f2b541684f67318d528ba1940558560bbc967abdfd"
+    },
+    {
+      "name": "model-00114-of-00124.safetensors",
+      "size": 3216414952,
+      "sha256": "46d119ebfb55dfeb5022f2b891ff90c2202c88091b694a76df0d9fe39065197e"
+    },
+    {
+      "name": "model-00116-of-00124.safetensors",
+      "size": 3215694464,
+      "sha256": "599381b10b450c6a1ea9aee43dfa134457cc3497bdedeefc1a6051c358b9382f"
+    },
+    {
+      "name": "model-00117-of-00124.safetensors",
+      "size": 3216414944,
+      "sha256": "f7605395f59b5cfdd7eec47eefafb44c016b0fbf704c02e7cf5fa8b060f3b90e"
+    },
+    {
+      "name": "model-00119-of-00124.safetensors",
+      "size": 3216415016,
+      "sha256": "a5cd7ff13714173255413d2b2d150ddf54d63503708ab81046c375cad1de3acd"
+    },
+    {
+      "name": "model-00121-of-00124.safetensors",
+      "size": 3216414328,
+      "sha256": "b751454ecd071e7b36604a7b845efe6ff3bfe4128c055f1abc1ec2b5222bc55a"
+    }
+  ]
+}

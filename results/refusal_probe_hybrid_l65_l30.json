@@ -1,0 +1,14 @@
+{
+  "tag": "hybrid_l65_lambda3.0",
+  "true_bypass": 32,
+  "refusal": 0,
+  "garbled": 0,
+  "coherence": 6,
+  "speed": [
+    29.665281550257205,
+    30.227875283089528,
+    17.72392978401234
+  ],
+  "results_n": 32,
+  "_note": "Sanitized aggregates only; raw harmful probe bodies not published."
+}

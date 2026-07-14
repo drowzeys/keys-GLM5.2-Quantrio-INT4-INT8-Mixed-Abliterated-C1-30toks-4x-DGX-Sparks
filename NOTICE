@@ -1,0 +1,32 @@
+# Notices
+
+## Model weights
+
+- **Abliterated (serve):** https://huggingface.co/drowzeys/GLM-5.2-Int4-Int8Mix-Abliterated (gated)
+- **Stock base (credit):** QuantTrio / GLM-5.2-Int4-Int8Mix  
+  https://huggingface.co/QuantTrio/GLM-5.2-Int4-Int8Mix
+
+Weights are not stored in this repository (~405 GiB). Use `scripts/oneshot.sh`.
+
+## Docker image
+
+- `ghcr.io/drowzeys/vllm-node-tf5-glm52-b12x:speed1-c1-30-128k`
+- Build lineage: eugr/spark-vllm-docker + CosmicRaisins / tonyd2wild mods
+
+## Kernels (`kernels/`)
+
+CosmicRaisins glm-5.2-gb10 sparse-MLA pack (Apache-2.0), vendored for one-shot install.
+
+## Image mods / patches
+
+- sm12x + b12x sparse mods (ciprianveg / CosmicRaisins forum lineage)
+- indexer MTP-overhang fix (tonyd2wild QuantTrio-200K recipe)
+
+## Launcher
+
+`serve/launch-keyspark.sh` adapted from CosmicRaisins → tonyd2wild 4× GB10 RoCE recipes (Apache-2.0).
+
+## Abliteration (this work)
+
+Standing: SRA residual write on `self_attn.o_proj` L65–77, λ=3.0.  
+Meta: `recipe/ABLIT_META_standing.json`. Results: `results/`.

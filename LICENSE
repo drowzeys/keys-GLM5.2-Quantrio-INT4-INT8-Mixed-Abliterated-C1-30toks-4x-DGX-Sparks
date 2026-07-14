@@ -1,0 +1,8 @@
+Research documentation and scripts — provided as-is, without warranty.
+
+Base model weights (Quantrio GLM-5.2 Int4-Int8Mix and derivatives) remain
+under their respective upstream licenses. This repository does not redistribute
+weight files.
+
+Operators are solely responsible for lawful, ethical use of abliteration and
+serving tooling.

@@ -1,0 +1,80 @@
+{
+  "base_note": "Stock = QuantTrio/GLM-5.2-Int4-Int8Mix (credit QuantTrio) \u2192 abliterated hardlink tree",
+  "base_model": "QuantTrio/GLM-5.2-Int4-Int8Mix",
+  "base_model_url": "https://huggingface.co/QuantTrio/GLM-5.2-Int4-Int8Mix",
+  "base_publisher": "QuantTrio",
+  "lambda": 3.0,
+  "layers": [
+    65,
+    77
+  ],
+  "modules": [
+    "self_attn.o_proj"
+  ],
+  "direction": "recipe/direction/refusal_direction_sra_prefill.pt (prefill capture + SRA rank-1 r=8)",
+  "method": "sra_residual_write_projection",
+  "n_edits": 13,
+  "mean_drel": 0.04017900933439915,
+  "hybrid": {
+    "recipe": "late-high-sep lovesenko-class (agent+speed max early stock)",
+    "keep_stock_until": 65,
+    "ablit_layers": [
+      65,
+      77
+    ],
+    "modules": [
+      "self_attn.o_proj"
+    ],
+    "lambda": 3.0,
+    "direction": "recipe/direction/refusal_direction_sra_prefill.pt",
+    "mtp_stock": true,
+    "eh_proj_stock": true,
+    "no_late_shared_down": true,
+    "mean_drel": 0.04017900933439915,
+    "edits": 13,
+    "note": "Only top-sep late o_proj; L0-64 stock for Hermes/Brikie protocol + MTP accept"
+  },
+  "agenting": null,
+  "sample_edits": [
+    {
+      "layer": 65,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03832390531897545,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 66,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04512660205364227,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 67,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.037923842668533325,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 76,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.038418225944042206,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 77,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03982957452535629,
+      "group_size": 128,
+      "lambda": 3.0
+    }
+  ]
+}

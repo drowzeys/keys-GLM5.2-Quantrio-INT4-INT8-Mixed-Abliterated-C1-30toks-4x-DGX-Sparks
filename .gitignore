@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.venv/
+*.log
+.DS_Store
+.env
+**/*secret*
+**/*token*
+
+# Local cluster config (site-specific IPs)
+recipe/cluster.env
+recipe/cluster.env.detected
+cluster.env
+
+# Large artifacts never commit
+*.safetensors
+work/
+
+# Keep published direction tensor
+!recipe/direction/*.pt
+!recipe/direction/SHA256SUMS
