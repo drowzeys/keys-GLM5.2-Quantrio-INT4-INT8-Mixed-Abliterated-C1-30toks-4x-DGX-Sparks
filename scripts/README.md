@@ -16,3 +16,6 @@
 | `verify_ablit_weights.py` | Dirty-shard verify |
 | `refusal_suite.py` | 32/32 suite |
 | `lib/common.sh` | cluster.env loader |
+
+Image rebuild (self-contained mods/kernels): `bash image/bake_image.sh`  
+Vendored sources: `third_party/tonyd2wild/`, `third_party/CosmicRaisins-glm-5.2-gb10/`, `kernels/`.
