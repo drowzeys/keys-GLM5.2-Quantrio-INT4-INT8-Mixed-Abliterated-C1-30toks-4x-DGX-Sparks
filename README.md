@@ -84,21 +84,27 @@ model:
 
 ---
 
-## What is in this repo
+## What is in this repo (self-contained)
 
 ```text
-scripts/oneshot.sh          ← only entrypoint you need
-recipe/cluster.env.example  ← your 4 node IPs + fabric
-serve/launch-keyspark.sh    ← SPEED=1 TP=4 launcher
-kernels/                    ← CosmicRaisins / tonyd sparse-MLA
-image/ · patches/           ← image bake lineage (public GHCR already baked)
-recipe/                     ← ablit meta, dirty shards, direction provenance
-results/                    ← 32/32 suite + C1≈30 benchmarks
-specs/ · .specify/          ← Spec Kit install constitution
+scripts/oneshot.sh              ← only entrypoint you need
+recipe/cluster.env.example      ← your 4 node IPs + fabric
+serve/launch-keyspark.sh        ← SPEED=1 TP=4 launcher
+kernels/                        ← CosmicRaisins sparse-MLA + standing extras
+image/
+  bake_image.sh                 ← rebuild image without other repos' patches
+  mods/ · patches/ · pins.env   ← tonyd2wild bake stack (vendored)
+third_party/
+  tonyd2wild/                   ← full tonyd mods/patches/launch + NOTICE
+  CosmicRaisins-glm-5.2-gb10/   ← LICENSE / NOTICE / ATTRIBUTION
+recipe/                         ← ablit meta, dirty shards, direction
+results/                        ← 32/32 suite + C1≈30 benchmarks
 ```
 
-Stock quant credit: [QuantTrio/GLM-5.2-Int4-Int8Mix](https://huggingface.co/QuantTrio/GLM-5.2-Int4-Int8Mix).  
-Runtime lineage: [tonyd2wild QuantTrio-200K](https://github.com/tonyd2wild/GLM-5.2-QuantTrio-200K-4x-DGX-Spark) + CosmicRaisins. See [NOTICE](NOTICE).
+**No other GitHub clone is required** for kernels, mods, or patches.  
+If GHCR is down: `bash image/bake_image.sh` (still pulls only the eugr base harness).
+
+Credits: QuantTrio · tonyd2wild · CosmicRaisins · eugr — see [NOTICE](NOTICE) · [third_party/](third_party/).
 
 ## Responsible use
 

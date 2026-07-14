@@ -10,21 +10,29 @@ Weights are not stored in this repository (~405 GiB). Use `scripts/oneshot.sh`
 
 ## Docker image
 
-- `ghcr.io/drowzeys/vllm-node-tf5-glm52-b12x:speed1-c1-30-128k`
-- Build lineage: eugr/spark-vllm-docker + CosmicRaisins / tonyd2wild mods
+- Public: `ghcr.io/drowzeys/vllm-node-tf5-glm52-b12x:speed1-c1-30-128k`
+- Rebuild: `bash image/bake_image.sh` (all mods/patches/kernels are **in this repo**)
+- Base harness (network only): [eugr/spark-vllm-docker](https://github.com/eugr/spark-vllm-docker)
+- vLLM pin: see `image/pins.env` (`ab666069935c1f23e8ef56038b4659ac9e8f19f8`)
 
-## Kernels (`kernels/`)
+## Vendored third-party (self-contained)
 
-CosmicRaisins glm-5.2-gb10 sparse-MLA pack (Apache-2.0), vendored for one-shot install.
+### tonyd2wild — QuantTrio 200K recipe
 
-## Image mods / patches
+Vendored under `third_party/tonyd2wild/` and applied via `image/mods/`, `image/patches/`:
 
-- sm12x + b12x sparse mods (ciprianveg / CosmicRaisins forum lineage)
-- indexer MTP-overhang fix (tonyd2wild QuantTrio-200K recipe)
+- `mods/glm52-sm12x-sparse`, `mods/glm52-b12x-sparse` (ciprianveg zip / CosmicRaisins mods)
+- `patches/fix-indexer-mtp-overhang.py`
+- `launch.sh` (CosmicRaisins lineage)
 
-## Launcher
+Upstream: https://github.com/tonyd2wild/GLM-5.2-QuantTrio-200K-4x-DGX-Spark (Apache-2.0)
 
-`serve/launch-keyspark.sh` adapted from CosmicRaisins → tonyd2wild 4× GB10 RoCE recipes (Apache-2.0).
+### CosmicRaisins — sm_121 sparse-MLA kernels
+
+Vendored under repo-root `kernels/` + attribution in
+`third_party/CosmicRaisins-glm-5.2-gb10/`.
+
+Upstream: https://github.com/CosmicRaisins/glm-5.2-gb10 (Apache-2.0)
 
 ## Abliteration (this work)
 

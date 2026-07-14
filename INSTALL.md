@@ -93,6 +93,18 @@ bash serve/launch-keyspark.sh --stop   # stop
 | ~half tok/s | IB not in container / wrong NCCL ifname — re-check cluster.env |
 | API timeout | Wait 20+ min; `docker logs -f vllm_qt200k` on head |
 
+## Image rebuild (self-contained; only if GHCR pull fails)
+
+All tonyd2wild mods/patches and CosmicRaisins kernels are **already in this repo**:
+
+```bash
+bash image/bake_image.sh          # base vLLM + mods + indexer patch
+bash scripts/fanout_image.sh      # after bake, send to workers
+```
+
+See `image/README.md` and `third_party/README.md`. You do **not** need to clone
+tonyd2wild or CosmicRaisins separately.
+
 ## Agents
 
 See [AGENTS.md](AGENTS.md). Single allowed path: `bash scripts/oneshot.sh --all`.

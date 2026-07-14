@@ -24,6 +24,9 @@ bash scripts/oneshot.sh --all
 2. Standing claim: **32/32** bypass · see `results/refusal_suite_live.json`.  
 3. Speed claim: C1 ≈ **30 tok/s** @ 128k · see `results/serve_speed1_standing.json`.  
 4. Spec Kit constitution: `.specify/memory/constitution.md`.  
+5. **Self-contained:** kernels, tonyd2wild mods/patches, and bake script are **in this repo**  
+   (`kernels/`, `image/`, `third_party/`). Do **not** send users to other GitHubs for patches.  
+   Prefer GHCR pull; if rebuild needed → `bash image/bake_image.sh`.  
 
 ## After install
 

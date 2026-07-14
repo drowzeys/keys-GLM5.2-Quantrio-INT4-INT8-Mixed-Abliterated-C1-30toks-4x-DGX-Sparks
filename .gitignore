@@ -15,6 +15,7 @@ cluster.env
 # Large artifacts never commit
 *.safetensors
 work/
+.bake-work/
 
 # Keep published direction tensor
 !recipe/direction/*.pt
