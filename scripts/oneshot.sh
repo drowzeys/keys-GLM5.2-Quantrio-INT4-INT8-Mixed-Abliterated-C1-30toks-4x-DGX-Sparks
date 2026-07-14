@@ -152,6 +152,6 @@ Stop: bash serve/launch-keyspark.sh --stop
 
 Config: recipe/cluster.env  (from cluster.env.example)
 Fabric: bash scripts/detect_fabric.sh --write
-Docs:   INSTALL.md · docs/ONE_SHOT.md · INSTALL.md (thinking off + full fanout)
+Docs:   INSTALL.md · results/
 Spec:   specs/001-oneshot-any-cluster/
 EOF
