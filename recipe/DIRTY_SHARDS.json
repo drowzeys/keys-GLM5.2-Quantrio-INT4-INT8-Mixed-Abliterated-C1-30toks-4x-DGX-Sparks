@@ -1,13 +1,88 @@
 {
   "repo": "drowzeys/GLM-5.2-Int4-Int8Mix-Abliterated",
-  "recipe": "o_proj L65-77 lambda=3.0 SRA prefill rank-1",
-  "n_dirty_shards": 13,
+  "recipe": "o_proj L50-77 lambda=3.0 SRA prefill rank-1 firm (replaces mild L65-77)",
+  "n_dirty_shards": 28,
   "n_model_shards_total": 124,
-  "note": "111 other model shards match QuantTrio stock by design. Only these 13 must differ from QuantTrio. Stock sizes are typically +32 bytes for these names.",
+  "note": "Stock shards outside L50-77 o_proj match QuantTrio by design. Firm replaces prior mild L65-77 standing recipe.",
   "launcher_hub_name": "glm52-int4-int8mix",
   "launcher_serve_path": "/cache/huggingface/hub/glm52-int4-int8mix",
   "host_hub_symlink": "/var/tmp/models/hub/glm52-int4-int8mix -> ../glm52-int4-int8mix-abliterated",
   "dirty_shards": [
+    {
+      "name": "model-00074-of-00124.safetensors",
+      "size": 3215694544,
+      "sha256": "73f1db5ea11fe53ffd0758ca5fcb9a13cd1d3fe0bdfe0ad6ab938b5aa275e3b7"
+    },
+    {
+      "name": "model-00075-of-00124.safetensors",
+      "size": 3216414944,
+      "sha256": "d51b2f41f0c32b3401a6070266adf02748652f8f651cd192ca5bfccfabcdc2d6"
+    },
+    {
+      "name": "model-00077-of-00124.safetensors",
+      "size": 3216415112,
+      "sha256": "2048c205388b9fa2a910dc32dd3b990a472e5ae78c724943c5cf7034ef0c4bed"
+    },
+    {
+      "name": "model-00079-of-00124.safetensors",
+      "size": 3216415712,
+      "sha256": "b81a790abbb6ae434111a586e1188d80df53a34c7733ac11c25ce27b1ba92cc2"
+    },
+    {
+      "name": "model-00080-of-00124.safetensors",
+      "size": 3215694016,
+      "sha256": "f18116dbf842432f0bc0ecfc14e332482ae9a4fbd4e9481e4b01fc4306236e8b"
+    },
+    {
+      "name": "model-00082-of-00124.safetensors",
+      "size": 3216415352,
+      "sha256": "39f26c85d616ebb23d4aa9c6cfb2dc0c80fe4dc66a4dc95bf6c3f9df1e6ed287"
+    },
+    {
+      "name": "model-00083-of-00124.safetensors",
+      "size": 3216414960,
+      "sha256": "a4957e9bfe6a35820437cecabd0a2faf7cad3ba972cb8143e9ab4ca396f8a5f4"
+    },
+    {
+      "name": "model-00085-of-00124.safetensors",
+      "size": 3216414976,
+      "sha256": "33dd6d3149108308213e382505b04b74c36c095f88c65df7e83daa71cf8ccaa2"
+    },
+    {
+      "name": "model-00087-of-00124.safetensors",
+      "size": 3215694640,
+      "sha256": "de6359cfc8dd2e676ea88fed2a9d4b01677a06a37b6acc5a39f82f5b1d9493a0"
+    },
+    {
+      "name": "model-00088-of-00124.safetensors",
+      "size": 3216414616,
+      "sha256": "9918b3d206e051881b2f3b75b5ee38631bba26632dfe66a19efee840fbaf328f"
+    },
+    {
+      "name": "model-00091-of-00124.safetensors",
+      "size": 3214765744,
+      "sha256": "e2cff9f77651bee3b3cc9cc10bb303277c9e43613ed7739f9104c937a7f8e374"
+    },
+    {
+      "name": "model-00093-of-00124.safetensors",
+      "size": 3216414944,
+      "sha256": "8cae92d5279997f96c546a40af7c78ad9479e6a731185cb25bbba9983bbf0824"
+    },
+    {
+      "name": "model-00095-of-00124.safetensors",
+      "size": 3215694520,
+      "sha256": "acc5e6bb4c50c4e7c67b2f424092bb028ef4ef1edd1808f664c23e3290064c4d"
+    },
+    {
+      "name": "model-00096-of-00124.safetensors",
+      "size": 3216414952,
+      "sha256": "6f25619a97c321fe02b7736905a5fa1bfa7464762663b0d275a505ab344525ed"
+    },
+    {
+      "name": "model-00098-of-00124.safetensors",
+      "size": 3216415072,
+      "sha256": "77ba23ba30a74b2c9f58854bf2e2f0314255ae7e757c44b602ea9d480b7c5087"
+    },
     {
       "name": "model-00100-of-00124.safetensors",
       "size": 3216415680,
@@ -73,5 +148,16 @@
       "size": 3216414328,
       "sha256": "b751454ecd071e7b36604a7b845efe6ff3bfe4128c055f1abc1ec2b5222bc55a"
     }
-  ]
+  ],
+  "lambda": 3.0,
+  "layers": [
+    50,
+    77
+  ],
+  "modules": [
+    "self_attn.o_proj"
+  ],
+  "mean_drel": 0.039942103038941114,
+  "n_edits": 28,
+  "firm_tag": "L50_L30"
 }

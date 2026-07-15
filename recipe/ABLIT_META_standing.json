@@ -5,7 +5,7 @@
   "base_publisher": "QuantTrio",
   "lambda": 3.0,
   "layers": [
-    65,
+    50,
     77
   ],
   "modules": [
@@ -13,13 +13,13 @@
   ],
   "direction": "recipe/direction/refusal_direction_sra_prefill.pt (prefill capture + SRA rank-1 r=8)",
   "method": "sra_residual_write_projection",
-  "n_edits": 13,
-  "mean_drel": 0.04017900933439915,
+  "n_edits": 28,
+  "mean_drel": 0.039942103038941114,
   "hybrid": {
-    "recipe": "late-high-sep lovesenko-class (agent+speed max early stock)",
-    "keep_stock_until": 65,
+    "recipe": "firm o_proj L50-77 \u03bb=3.0 (replaces mild late-only L65-77)",
+    "keep_stock_until": 50,
     "ablit_layers": [
-      65,
+      50,
       77
     ],
     "modules": [
@@ -30,33 +30,33 @@
     "mtp_stock": true,
     "eh_proj_stock": true,
     "no_late_shared_down": true,
-    "mean_drel": 0.04017900933439915,
-    "edits": 13,
-    "note": "Only top-sep late o_proj; L0-64 stock for Hermes/Brikie protocol + MTP accept"
+    "mean_drel": 0.039942103038941114,
+    "edits": 28,
+    "note": "Deeper firm window than mild L65-77; 32/32 think-off+on, 0 garble, Hermes 4/4 primary, C1~30.5 @ seqs=4"
   },
-  "agenting": null,
+  "firm_tag": "L50_L30",
   "sample_edits": [
     {
-      "layer": 65,
+      "layer": 50,
       "mod": "self_attn.o_proj",
       "kind": "w8a16",
-      "drel": 0.03832390531897545,
+      "drel": 0.04173442721366882,
       "group_size": 128,
       "lambda": 3.0
     },
     {
-      "layer": 66,
+      "layer": 51,
       "mod": "self_attn.o_proj",
       "kind": "w8a16",
-      "drel": 0.04512660205364227,
+      "drel": 0.03505844250321388,
       "group_size": 128,
       "lambda": 3.0
     },
     {
-      "layer": 67,
+      "layer": 52,
       "mod": "self_attn.o_proj",
       "kind": "w8a16",
-      "drel": 0.037923842668533325,
+      "drel": 0.035392433404922485,
       "group_size": 128,
       "lambda": 3.0
     },

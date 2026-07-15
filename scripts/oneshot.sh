@@ -9,7 +9,7 @@
 #   export HF_TOKEN=hf_...
 #   bash scripts/oneshot.sh                  # preflight + kernels + image + NCCL + weights
 #   bash scripts/oneshot.sh --fanout         # + fanout image/kernels/NCCL/weights to workers
-#   bash scripts/oneshot.sh --launch         # + SPEED=1 launch
+#   bash scripts/oneshot.sh --launch         # + + launch (max_num_seqs=4)
 #   bash scripts/oneshot.sh --verify         # + refusal suite (needs live serve)
 #   bash scripts/oneshot.sh --all            # fanout + launch + wait + suite
 #
@@ -97,9 +97,9 @@ fi
 say "6/7  Diagnose install (this host)"
 bash "$ROOT/scripts/diagnose_install.sh" || die "diagnose failed — fix before launch"
 
-# 7) optional launch SPEED=1
+# 7) optional launch (max_num_seqs=4)
 if [ "$DO_LAUNCH" = "1" ]; then
-  say "7/7  Launch SPEED=1 (TP=${#NODES_ARR[@]})"
+  say "7/7  Launch firm stand (seqs=4) (TP=${#NODES_ARR[@]})"
   if [ "${#NODES_ARR[@]}" -lt 1 ]; then
     die "NODES empty — cannot launch. Set recipe/cluster.env"
   fi
@@ -110,7 +110,9 @@ if [ "$DO_LAUNCH" = "1" ]; then
   fi
   export NODES SSH_USER SSH_KEY WEIGHTS_DIR KERNELS_DIR IMAGE NAME PORT MASTER_PORT
   export NCCL_IB_HCA NCCL_SOCKET_IFNAME GLOO_SOCKET_IFNAME NCCL_IB_GID_INDEX
-  export MTP_K SPEED UTIL MAX_MODEL_LEN KV_BYTES LAYERING
+  export MTP_K SPEED UTIL MAX_MODEL_LEN KV_BYTES LAYERING MAX_NUM_SEQS
+  : "${SPEED:=0}"
+  : "${MAX_NUM_SEQS:=4}"
   bash "$ROOT/serve/launch-keyspark.sh"
 
   HEAD="${HEAD:-${NODES_ARR[0]}}"

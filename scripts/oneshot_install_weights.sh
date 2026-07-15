@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# 🚨 REQUIRED ONE-SHOT — standing abliterated GLM-5.2 Quantrio weights
+# 🚨 REQUIRED ONE-SHOT — firm standing abliterated GLM-5.2 Quantrio weights
 # ============================================================================
 # IMPORTANT (agents + humans):
 #   This is the ONLY supported install path for published refusal-bypass weights.
@@ -15,7 +15,7 @@
 #
 # What it does:
 #   1) hf download drowzeys/GLM-5.2-Int4-Int8Mix-Abliterated  (~405 GiB)
-#   2) verify the 13 dirty late shards (size; optional --sha256)
+#   2) verify the 28 dirty firm shards (size; optional --sha256)
 #   3) install hub symlink name the launcher actually uses: glm52-int4-int8mix
 #   4) optional: fanout full tree (or dirty shards) to worker IPs
 #
@@ -63,7 +63,7 @@ die() { printf '\n\033[31mERROR: %s\033[0m\n' "$*" >&2; exit 1; }
 
 printf '\n\033[1;33m🚨 REQUIRED ONE-SHOT — follow exact steps (do not improvise)\033[0m\n'
 printf '   Repo: INSTALL.md\n'
-printf '   Goal: standing ablit weights with verify PASS (not QuantTrio stock)\n'
+printf '   Goal: firm standing ablit weights with verify PASS (not QuantTrio stock)\n'
 
 say "1/4  HF download (gated) → $ABLIT_DIR"
 if [ "$SKIP_DOWNLOAD" = "1" ]; then
@@ -120,7 +120,7 @@ fi
 say "Post-check diagnosis (this host)"
 bash "$ROOT/scripts/diagnose_install.sh" || die "diagnose_install failed after oneshot"
 
-printf '\n\033[1;32mPASS — standing ablit weights ready on this host\033[0m\n\n'
+printf '\n\033[1;32mPASS — firm standing ablit weights ready on this host\033[0m\n\n'
 cat <<EOF
 Tree:  $ABLIT_DIR
 Hub:   $WEIGHTS_DIR/hub/glm52-int4-int8mix  →  abliterated

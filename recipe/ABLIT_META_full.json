@@ -1,0 +1,255 @@
+{
+  "base": "/var/tmp/models/glm52-int4-int8mix",
+  "lambda": 3.0,
+  "n_directions": 1,
+  "layers": [
+    50,
+    77
+  ],
+  "modules": [
+    "self_attn.o_proj"
+  ],
+  "direction": "work/refusal_direction_sra_prefill.pt",
+  "method": "sra_residual_write_projection",
+  "edits": [
+    {
+      "layer": 50,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04173442721366882,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 51,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03505844250321388,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 52,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.035392433404922485,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 53,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.0476568266749382,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 54,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04793781042098999,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 55,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.048434071242809296,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 56,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.0351506806910038,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 57,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03627952188253403,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 58,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04003867879509926,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 59,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03713587298989296,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 60,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.041422776877880096,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 61,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.039196133613586426,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 62,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03706572949886322,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 63,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.037127044051885605,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 64,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.036421313881874084,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 65,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03832390531897545,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 66,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04512660205364227,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 67,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.037923842668533325,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 68,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03988499194383621,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 69,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04229053109884262,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 70,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03906518965959549,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 71,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03979257121682167,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 72,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.0440109446644783,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 73,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03898385167121887,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 74,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.04096859693527222,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 75,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03770829364657402,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 76,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.038418225944042206,
+      "group_size": 128,
+      "lambda": 3.0
+    },
+    {
+      "layer": 77,
+      "mod": "self_attn.o_proj",
+      "kind": "w8a16",
+      "drel": 0.03982957452535629,
+      "group_size": 128,
+      "lambda": 3.0
+    }
+  ],
+  "mean_drel": 0.039942103038941114,
+  "firm_tag": "L50_L30",
+  "recipe": "firm_oproj_L50-77_lambda3_mtp_stock_garble_fix",
+  "hybrid": {
+    "ablit_layers": [
+      50,
+      77
+    ],
+    "modules": [
+      "self_attn.o_proj"
+    ],
+    "lambda": 3.0,
+    "mtp_stock": true,
+    "note": "Lighter than L40 \u03bb3.5 to reduce mid-layer quality/garble; thinking-off bypass target 32/32"
+  }
+}

@@ -20,7 +20,7 @@ bash scripts/oneshot.sh --all
 
 ## Hard facts
 
-1. Abliteration is **in the weights** (SRA o_proj L65–77 λ=3.0), not applied at launch.  
+1. Abliteration is **in the weights** (SRA o_proj L50–77 λ=3.0), not applied at launch.  
 2. Standing claim: **32/32** bypass · see `results/refusal_suite_live.json`.  
 3. Speed claim: C1 ≈ **30 tok/s** @ 128k · see `results/serve_speed1_standing.json`.  
 4. Spec Kit constitution: `.specify/memory/constitution.md`.  
