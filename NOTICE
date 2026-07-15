@@ -36,5 +36,5 @@ Upstream: https://github.com/CosmicRaisins/glm-5.2-gb10 (Apache-2.0)
 
 ## Abliteration (this work)
 
-Standing: SRA residual write on `self_attn.o_proj` L65–77, λ=3.0.  
+Standing: SRA residual write on `self_attn.o_proj` L50–77, λ=3.0 (firm; replaces mild L65–77).  
 Meta: `recipe/ABLIT_META_standing.json`. Results: `results/`.

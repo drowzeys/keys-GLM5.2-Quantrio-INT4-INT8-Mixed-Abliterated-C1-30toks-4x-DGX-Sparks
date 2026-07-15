@@ -1,4 +1,4 @@
-# Agents — this repo is download-and-run only
+# Agents — this repo is download-and-run only (firm L50–77)
 
 ## Do this
 
@@ -14,15 +14,16 @@ bash scripts/oneshot.sh --all
 - Invent alternate install graphs  
 - Download QuantTrio **stock** and serve it as ablit  
 - Skip fanout / install only on head  
-- Score refusal bypass with thinking **on**  
+- Score refusal bypass with thinking **on** for the published claim path  
 - Hand-roll hub paths (must be `hub/glm52-int4-int8mix` → abliterated)  
 - Raise UTIL above **0.86** for this profile  
+- Install the old **mild L65–77** tree and call it firm (verify expects **28** dirty shards)
 
 ## Hard facts
 
-1. Abliteration is **in the weights** (SRA o_proj L50–77 λ=3.0), not applied at launch.  
-2. Standing claim: **32/32** bypass · see `results/refusal_suite_live.json`.  
-3. Speed claim: C1 ≈ **30 tok/s** @ 128k · see `results/serve_speed1_standing.json`.  
+1. Abliteration is **in the weights** (SRA o_proj **L50–77** λ=3.0), not applied at launch.  
+2. Standing claim: **32/32** bypass think-off (and think-on) · see `results/refusal_suite_live.json`.  
+3. Speed claim: C1 ≈ **30.5 tok/s** @ 128k with **max_num_seqs=4** · see `results/serve_seqs4_standing.json`.  
 4. Spec Kit constitution: `.specify/memory/constitution.md`.  
 5. **Self-contained:** kernels, tonyd2wild mods/patches, and bake script are **in this repo**  
    (`kernels/`, `image/`, `third_party/`). Do **not** send users to other GitHubs for patches.  
@@ -36,4 +37,4 @@ bash scripts/diagnose_install.sh
 bash serve/launch-keyspark.sh --stop   # if needed
 ```
 
-Client must send `chat_template_kwargs: { enable_thinking: false }`.
+Client must send `chat_template_kwargs: { enable_thinking: false }` for latency + agent use.

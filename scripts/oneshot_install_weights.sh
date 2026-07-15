@@ -28,7 +28,7 @@
 # Docs: INSTALL.md · README.md (top)
 #
 # After this:
-#   MTP_K=4 SPEED=1 UTIL=0.86 MAX_MODEL_LEN=128000 ./serve/launch-keyspark.sh
+#   SPEED=0 MAX_NUM_SEQS=4 MTP_K=4 UTIL=0.86 MAX_MODEL_LEN=128000 ./serve/launch-keyspark.sh
 # ============================================================================
 set -euo pipefail
 

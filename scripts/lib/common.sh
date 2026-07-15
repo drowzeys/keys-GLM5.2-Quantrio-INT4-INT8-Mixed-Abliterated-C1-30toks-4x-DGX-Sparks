@@ -44,11 +44,12 @@ apply_cluster_defaults() {
   PORT="${PORT:-8210}"
   MASTER_PORT="${MASTER_PORT:-29501}"
 
-  # Standing SPEED=1 knobs
+  # Standing firm seqs=4 knobs
   UTIL="${UTIL:-0.86}"
   KV_BYTES="${KV_BYTES:-7008000000}"
   MAX_MODEL_LEN="${MAX_MODEL_LEN:-128000}"
-  SPEED="${SPEED:-1}"
+  SPEED="${SPEED:-0}"
+  MAX_NUM_SEQS="${MAX_NUM_SEQS:-4}"
   MTP_K="${MTP_K:-4}"
   LAYERING="${LAYERING:-0}"
 

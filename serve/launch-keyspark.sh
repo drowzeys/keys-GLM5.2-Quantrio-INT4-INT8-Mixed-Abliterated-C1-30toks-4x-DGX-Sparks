@@ -2,7 +2,7 @@
 #
 # launch-keyspark.sh — Quantrio GLM-5.2 Int4-Int8Mix Abliterated on 4× GB10.
 #
-# Lineage: CosmicRaisins launch.sh → tonyd2wild QuantTrio-200K → this SPEED=1 pack.
+# Lineage: CosmicRaisins launch.sh → tonyd2wild QuantTrio-200K → this firm max_num_seqs=4 pack.
 # Cluster-agnostic: source recipe/cluster.env or env vars (NODES, SSH_*, NCCL_*).
 #
 #   cp recipe/cluster.env.example recipe/cluster.env   # edit once
@@ -49,11 +49,14 @@ if [ ! -f "$KERNELS_DIR/sparse_mla_kernels.py" ]; then
   exit 1
 fi
 
-# Standing SPEED=1 → max_num_seqs
-MAX_NUM_SEQS="${MAX_NUM_SEQS:-${SPEED:+1}}"
-MAX_NUM_SEQS="${MAX_NUM_SEQS:-1}"
-if [ "${SPEED:-1}" = "1" ] && [ -z "${MAX_NUM_SEQS_SET:-}" ]; then
-  MAX_NUM_SEQS="${MAX_NUM_SEQS:-1}"
+# Standing firm: SPEED=0 → max_num_seqs=4 (override with SPEED=1 for pure C1)
+SPEED="${SPEED:-0}"
+if [ -z "${MAX_NUM_SEQS:-}" ]; then
+  if [ "${SPEED}" = "1" ]; then
+    MAX_NUM_SEQS=1
+  else
+    MAX_NUM_SEQS=4
+  fi
 fi
 
 # Fabric must be set

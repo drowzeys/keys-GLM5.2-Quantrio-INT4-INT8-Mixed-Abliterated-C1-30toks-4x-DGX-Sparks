@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Verify GLM-5.2 Quantrio abliterated weights are the real late-only ablit, not stock.
+"""Verify GLM-5.2 Quantrio abliterated weights are the real firm L50–77 ablit, not stock.
 
-Default: size check on the 13 dirty shards (fast, enough to catch stock mix-ups).
+Default: size check on dirty shards from DIRTY_SHARDS.json (28 for firm) (fast, enough to catch stock mix-ups).
 Optional: --sha256 for full LFS digest match (slow, ~40 GiB read).
 
 Also catches partial installs that cause **<100% refusal bypass**:
@@ -249,8 +249,8 @@ def main() -> int:
         print("FAIL — abliterated weights NOT verified")
         print("Common causes of full OR partial (<100%) refusal bypass:")
         print("  • downloaded QuantTrio stock instead of drowzeys/...-Abliterated")
-        print("  • incomplete download / fanout (need all 124 shards + 13 dirty)")
-        print("  • hardlink clone from stock without overlaying ALL 13 dirty shards")
+        print("  • incomplete download / fanout (need all 124 shards + all dirty firm shards (28))")
+        print("  • hardlink clone from stock without overlaying ALL dirty firm shards (28)")
         print("  • hub symlink missing, wrong name, or pointing at stock")
         print("  • multi-node: only some ranks have ablit (verify on EVERY rank)")
         print("  • probes with enable_thinking=true (false “still refuses”)")
@@ -261,7 +261,7 @@ def main() -> int:
 
     for w in warns:
         print("WARN:", w)
-    print("PASS — dirty shards match standing late ablit (L65–77 o_proj)")
+    print("PASS — dirty shards match standing firm ablit (L50–77 o_proj)")
     print(f"  dirty OK: {dirty_ok}/{len(dirty)} · tree shards: {n_shards}/{n_total}")
     print("Next: ensure hub symlink name is exactly 'glm52-int4-int8mix':")
     print("  bash scripts/install_hub_symlink.sh")

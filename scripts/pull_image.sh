@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pull the public standing image (SPEED=1 / C1≈30 recipe).
+# Pull the public standing image (firm L50–77 max_num_seqs=4 recipe).
 # If GHCR is unreachable and a local modded image already exists, keep it.
 # Full offline rebuild from this repo: bash image/bake_image.sh
 set -euo pipefail

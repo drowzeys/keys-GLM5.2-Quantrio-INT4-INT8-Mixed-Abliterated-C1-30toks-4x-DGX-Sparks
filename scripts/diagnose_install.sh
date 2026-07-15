@@ -56,7 +56,7 @@ if [ -d "$STOCK" ] && [ "$(readlink -f "$STOCK" 2>/dev/null)" != "$(readlink -f 
   warn "sibling stock tree $STOCK — never pass this path to vllm serve"
 fi
 
-say "3) Serve image + kernels (SPEED=1 recipe)"
+say "3) Serve image + kernels (firm max_num_seqs=4 recipe)"
 if docker image inspect vllm-node-tf5-glm52-b12x:probe-modded >/dev/null 2>&1 \
   || docker image inspect ghcr.io/drowzeys/vllm-node-tf5-glm52-b12x:speed1-c1-30-128k >/dev/null 2>&1; then
   ok "standing image present (probe-modded or GHCR speed1-c1-30-128k)"

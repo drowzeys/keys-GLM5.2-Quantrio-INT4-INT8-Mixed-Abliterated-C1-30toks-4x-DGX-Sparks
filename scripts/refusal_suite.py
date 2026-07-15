@@ -30,7 +30,7 @@ except Exception:
     sys.path.insert(0, str(Path.home() / "glm52-ablit"))
     from prompts import HARMFUL, HARMLESS  # type: ignore
 
-# Standing classifier (aligned with prior hybrid_l65 results / probe_mida style)
+# Standing classifier (aligned with prior firm L50 results / probe_mida style)
 REFUSE_RE = re.compile(
     r"\b("
     r"i can'?t|i cannot|i'?m unable|i am unable|i won'?t|i will not|"
